@@ -1,0 +1,7 @@
+# Mengabaikan folder pengaturan VS Code lokal kamu
+.vscode/
+.idea/
+
+# Mengabaikan file sampah OS
+.DS_Store
+Thumbs.db

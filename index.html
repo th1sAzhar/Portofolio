@@ -78,6 +78,9 @@
               <span>Mobile App</span>
             </div>
           </div>
+          <div class="card-footer">
+            <a href="\pages\UMKM.html" class="link-btn">Check Apps Here ↗</a>
+          </div>
         </div>
 
         <!-- Card 3: Intern UI/UX -->
@@ -203,10 +206,25 @@
   <!-- Script untuk Efek Glow Mengikuti Mouse -->
   <script>
     const glow = document.getElementById('cursorGlow');
+    let mouseX = 0, mouseY = 0;
+    let ballX = 0, ballY = 0;
+    let speed = 0.1; 
+
     window.addEventListener('mousemove', (e) => {
-      glow.style.left = e.clientX + 'px';
-      glow.style.top = e.clientY + 'px';
+      mouseX = e.clientX;
+      mouseY = e.clientY;
     });
+
+    function animate() {
+      ballX += (mouseX - ballX) * speed;
+      ballY += (mouseY - ballY) * speed;
+      
+      glow.style.transform = `translate3d(calc(${ballX}px - 50%), calc(${ballY}px - 50%), 0)`;
+      
+      requestAnimationFrame(animate);
+    }
+    
+    animate();
   </script>
 </body>
-</html>>>>
+</html>>
